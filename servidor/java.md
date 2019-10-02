@@ -1,4 +1,6 @@
-# Servlets
+# Java
+
+## Servlets
 
 Un servidor de aplicaciones web de Java proporciona el modelo de programación de **Servlets**,
 que son clases de Java capaces de procesar una petición **http** y generar una respuesta, al estilo del mecanismo CGI tradicional, pero con algunas ventajas:
@@ -16,10 +18,7 @@ están integradas en el servidor web Java, y nuestros servlets pueden usarlas.
 
 > [Api de Java EE 7.](https://docs.oracle.com/javaee/7/api/toc.htm)
 
-## Estructura
-
-
-### HttpServlet
+### Estructura
 
 Un servlet debe heredar de la clase `HttpServlet`. Esta clase se encuentra en el paquete `javax.servlet.http`.
 
@@ -77,3 +76,4 @@ public class HelloWorld extends HttpServlet {
     * El cuerpo de la respuesta, que se escribe mediante el stream
       asociado a `response.getWriter()`, y que por costumbre se recoge en una referencia llamada `out`.
 
+## JSP (Java Server Pages)
