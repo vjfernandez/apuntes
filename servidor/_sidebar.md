@@ -1,4 +1,4 @@
-# Servidor
+<!-- docs/_sidebar.md -->
 
-* [Introducción](#/servidor/)
-* [Java: Servlets y JSP](#/servidor/java/)
+* [Home](/servidor/README.md)
+* [Java](/servidor/java.md)
