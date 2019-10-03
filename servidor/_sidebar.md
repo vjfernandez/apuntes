@@ -1,4 +1,4 @@
 <!-- docs/_sidebar.md -->
 
-* [Home](/)
-* [Java](java.md)
+* [Home](servidor)
+* [Java](servidor/java.md)
