@@ -14,7 +14,7 @@ Para la confección de un servlet, los programadores disponen de toda la potenci
 en paquetes dirigidas a la programación de aplicaciones empresariales, incluidas las aplicaciones web. Las clases de Java EE
 están integradas en el servidor web Java, y nuestros servlets pueden usarlas.
 
-> [Api de Java EE 7.](https://docs.oracle.com/javaee/7/api/toc.htm)
+> [Api de Java EE 7](https://docs.oracle.com/javaee/7/api/toc.htm)
 
 ## Estructura
 
