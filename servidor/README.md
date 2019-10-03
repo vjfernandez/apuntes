@@ -8,7 +8,7 @@ que son clases de Java capaces de procesar una petición **http** y generar una 
 * Los mecanismos de seguridad de Java están incorporados, lo que permite una confiabilidad de las aplicaciones.
 * Toda la funcionalidad de Java SE está a disposición de las aplicaciones web de Java, además de mecanismos específicos.
 
-> Son servidores de Java **Apache Tomcat, Oracle Glassfish, Paraya, IBM Websphere, Oracle Weblogic, Red Hat WildFly**.
+> Son servidores de Java **Apache [Tomcat](https://tomcat.apache.org/), [Paraya](https://www.payara.fish/), IBM [Websphere](https://www.ibm.com/es-es/marketplace/java-ee-runtime), Oracle [Weblogic](https://www.oracle.com/es/middleware/weblogic/), Red Hat [WildFly](https://wildfly.org/)**.
 
 Para la confección de un servlet, los programadores disponen de toda la potencia de Java SE y además de **Java EE** (Enterprise Edition), que son una serie de clases agrupadas
 en paquetes dirigidas a la programación de aplicaciones empresariales, incluidas las aplicaciones web. Las clases de Java EE
@@ -17,9 +17,6 @@ están integradas en el servidor web Java, y nuestros servlets pueden usarlas.
 > [Api de Java EE 7.](https://docs.oracle.com/javaee/7/api/toc.htm)
 
 ## Estructura
-
-
-### HttpServlet
 
 Un servlet debe heredar de la clase `HttpServlet`. Esta clase se encuentra en el paquete `javax.servlet.http`.
 
@@ -38,7 +35,7 @@ También existe un método llamado `service` que es el que recoge las peticiones
 
 Los servlets se ejecutan típicamente en un entorno concurrente con múltiples hilos de ejecución, así que sé consciente de que un servlet debe manejar peticiones http concurrentemente y sé cuidadoso con el acceso a recursos compartidos.
 
-#### Ejemplo de servlet
+## Ejemplo de servlet
 
 ```java
 // Import required java libraries
@@ -67,13 +64,44 @@ public class HelloWorld extends HttpServlet {
 * el método `doGet` reemplaza el heredado
 * Recibe como parámetro un parámetro que representa a la petición y otro a la respuesta, de las clases `HttpServletRequest` y `HttpServletResponse`.
 * La petición contiene, entre otros:
-    * Parámetros, que se pueden obtener con `request.getParameter(_nombre_)`
-    * Campos de cabecera
-    * Cookies enviadas desde el cliente
+  * Parámetros, que se pueden obtener con `request.getParameter(_nombre_)`
+  * Campos de cabecera
+  * Cookies enviadas desde el cliente
 * La respuesta que se enviará al cliente contiene, entre otros:
-    * El código de respuesta (200 Ok, si no se indica otro)
-    * Campos de cabecera
-    * Cookies fijadas por el servidor
-    * El cuerpo de la respuesta, que se escribe mediante el stream
-      asociado a `response.getWriter()`, y que por costumbre se recoge en una referencia llamada `out`.
+  * El código de respuesta (200 Ok, si no se indica otro)
+  * Campos de cabecera
+  * Cookies fijadas por el servidor
+  * El cuerpo de la respuesta, que se escribe mediante el stream
+    asociado a `response.getWriter()`, y que por costumbre se recoge en una referencia llamada `out`.
+
+## Leer campos de formulario
+
+Los servlets manejan los datos de formulario parseándolos automáticamente, tanto si vienen por el método GET como por el método POST.
+
+Los campos pueden ser revisados mediante estos métodos del `request`, entre otros:
+
+* getParameter() − Obtiene el valor de un parámetro, o null si no se recibió ese parámetro.
+
+* getParameterValues() − Si el parámetro aparece más de una vez o devuelve múltiples valores
+
+* getParameterNames() − Devueve una colección con el nombre de todos los parámetros.
+
+## Parámetros en la URL
+
+Los parámetros pueden venir asociados a la URL.  
+La zona de parámetros en la URL empieza con `?` y a continuación vienen los parámetros en el formato _nombre=valor_, con `&` como separador. Ej:
+
+```
+http://dominio.com/recurso?id=3&termino=hola+mundo
+```
+
+En este caso, hay dos parámetros en la URL: `id` y `termino`.
+
+Un formulario con método GET generará una URL en este formato. También se pueden asociar directamente este tipo de URLs a un enlace `<a>` u otro elemento clicable.
+
+Como la URL no admite espacios ni símbolos no ASCII, se utiliza la codificación **URLencode**, en la que los espacios son sustituidos por `+` y los carácteres no ASCII por los valores hexadecimales de cada byte que los compone, precedidos de un `%`. Ej: La url de la página de wikipedia para la entrada **Cigüeñal** contiene dos carácteres no ASCII: la ü y la ñ. Su codificación URLencode sería:
+```
+https://es.wikipedia.org/wiki/Cig%C3%BCe%C3%B1al
+```
+`%C3%BC` es la codificación de la **ü* y `%C3%B1` la de la *ñ*.
 
