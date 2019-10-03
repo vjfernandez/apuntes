@@ -1,5 +1,5 @@
 Servidor
 * [intro](/servidor/)
-* [java](/servidor/java/)
+* [java](/servidor/java.md)
 
  
