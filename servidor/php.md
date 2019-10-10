@@ -23,12 +23,13 @@ puede ser 'mascotas' o 'ropa'.
 
 **2** - Haz un programa que escoja dos números al azar entre 1 y 6, simulando dos tiradas de un dado, y guardándolos en variables. El programa imprimirá las dos tiradas, y la suma de los dos valores.
 
-   * Amplía el programa descargando desde wikimedia commons [las imágenes de las seis caras de un dado](https://commons.wikimedia.org/wiki/Category:Dice_faces)
-   * Amplía el programa, para que salgan 8 tiradas de dado, que guardaremos en un array. Igualmente se mostrarán las imagenes de los 8 dados, y se mostrará la suma al final.
+* Amplía el programa descargando desde wikimedia commons [las imágenes de las seis caras de un dado](https://commons.wikimedia.org/wiki/Category:Dice_faces)
+* Amplía el programa, para que salgan 8 tiradas de dado, que guardaremos en un array. Igualmente se mostrarán las imagenes de los 8 dados, y se mostrará la suma al final.
    
 
 **3** - Escribe un programa que obtenga el año en que compramos un coche o moto, y muestre los años en que tiene que pasar las primeras 10  ITV: coches y motos pasan la ITV cada 2 años cuando el vehículo tiene entre 6 y 10 años, y luego cada año.
-   * amplía el programa con una lista desplegable, para preguntar si el vehículo es coche, moto o  ciclomotor. Los ciclomotores pasan la ITV cada dos años a partir del tercero
+
+* amplía el programa con una lista desplegable, para preguntar si el vehículo es coche, moto o  ciclomotor. Los ciclomotores pasan la ITV cada dos años a partir del tercero
 
 **4** - Haz una calculadora con un formulario que tenga los siguientes campos y un script que los procese e imprima el resultado:
 
