@@ -32,10 +32,10 @@ puede ser 'mascotas' o 'ropa'.
 
 **4** - Haz una calculadora con un formulario que tenga los siguientes campos y un script que los procese e imprima el resultado:
 
-    * Dos operandos numéricos, que admitan decimales y negativos, entre -100 y +100 (usa `<input type="number">` con sus opciones)
-    * Cinco radios, para estas operaciones: sumar, restar, multiplicar, dividir y potencia.
-    * Un checkbox que indique si los números negativos se muestran en rojo.
-    * Un botón de enviar.
-    * Nota: con el checkbox solo se envía el parámetro si ha sido marcado. Usa `isset` para saber si el parámetro ha sido recogido.
+* Dos operandos numéricos, que admitan decimales y negativos, entre -100 y +100 (usa `<input type="number">` con sus opciones)
+* Cinco radios, para estas operaciones: sumar, restar, multiplicar, dividir y potencia.
+* Un checkbox que indique si los números negativos se muestran en rojo.
+* Un botón de enviar.
+* Nota: con el checkbox solo se envía el parámetro si ha sido marcado. Usa `isset` para saber si el parámetro ha sido recogido.
 
   
