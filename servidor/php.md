@@ -42,7 +42,7 @@ puede ser 'mascotas' o 'ropa'.
 * Un botón de enviar.
 * Nota: con el checkbox solo se envía el parámetro si ha sido marcado. Usa `isset` para saber si el parámetro ha sido recogido.
 
-###### B - Con funciones
+##### B - Con funciones
 
 **1** Haz un programa con una función que calcule el factorial de un número n, y muestre el resultado. (función de cáculo) `function factorial($n)`
 
