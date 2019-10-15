@@ -1,8 +1,10 @@
 # php
 
-##### Ejercicios
 
-###### Introductorios
+
+#### Ejercicios
+
+##### A - Introductorios
 
 **1** - Una tienda online necesita un tratamiento de la información de la cesta de los clientes que cumpla los siguientes requisitos:
 
@@ -40,11 +42,12 @@ puede ser 'mascotas' o 'ropa'.
 * Un botón de enviar.
 * Nota: con el checkbox solo se envía el parámetro si ha sido marcado. Usa `isset` para saber si el parámetro ha sido recogido.
 
-###### Con funciones
+###### B - Con funciones
 
 **1** Haz un programa con una función que calcule el factorial de un número n, y muestre el resultado. (función de cáculo) `function factorial($n)`
 
-**2** Haz un programa que pida una cadena y sustituya cualquier vocal por "i", con la misma capitalización. Usa una función de cálculo `function cambiarVocales($mensaje)` Ej: "El mensaje secreto." --> "Il minsiji sicriti."
+**2** Haz un programa que pida una cadena y sustituya cualquier vocal por "i", con la misma capitalización. Usa una función de cálculo `function cambiarVocales($mensaje)` Ej: "El mensaje secreto." --> "Il minsiji sicriti." [[Posible solución]](https://repl.it/@vjfernandez/ej-b-02)
+
 **3** Haz un programa que pida una cadena y que imprima la cantidad de cada vocal que tiene. Contempla sólo a, e, i, o, u, A, E, I, O, U. 
 Hacemos una función de cálculo, que acepte una cadena y devuelva un array asociativo, con las vocales en minúscula como claves y su frecuencia como valor.
 Si la cadena no contiene una determinada vocal, estará también como clave del array, pero con valor 0.
@@ -58,11 +61,12 @@ Haremos una función de _presentación_ que genere la tabla de un número. Con u
 **6** Haz un programa que imprima **todos** los números entre 2 y un entero n dado por parámetro (Nombre del parámetro: `n`). Si no se da el parámetro se supondrá que n es 100, de tal manera que los primos se pinten en verde y los compuestos en rojo. 8 números en cada línea: una tabla de 8 datos por fila mejor
 (ojo a la última fila).  
 
-Utilizando el algoritmo de [la criba de eratóstenes](https://es.wikipedia.org/wiki/Criba_de_Erat%C3%B3stenes) devolveremos un array con índices numéricos entre 2 y n, cuyos valores serán `true` si el número es primo o false si no lo es.  
-Usaremos una función de cálculo con un parámetro por defecto `eratostenes($n = 100)`
+Utilizando el algoritmo de [la criba de eratóstenes](https://es.wikipedia.org/wiki/Criba_de_Erat%C3%B3stenes) devolveremos un array con índices numéricos entre 2 y n, cuyos valores serán `true` si el número es primo o `false` si no lo es.  
+Usaremos una función de cálculo con un parámetro que indiqe el número maximoa comprobar (incluído) `eratostenes($n)`
 
-**7** Haz un programa que pida una cadena y que imprima la cantidad de cada vocal que tiene, y cuente el número de veces que aparece cada palabra, imprimiendo las palabras en orden, y su frecuencia de aparición, en una tabla.
+**7** Haz un programa que pida un texto, si quieres de varias líneas y que imprima la frecuencia de aparición de cada palabra que tiene, imprimiendo las palabras en orden alfabético, y su frecuencia de aparición, en una tabla.
 Usa una función de cálculo `function cuentaPalabras($mensaje)` que devuelva un array asociativo con las palabras como claves, y su frecuencia como valor.
 Las palabras van separadas por 1 o más espacios. Los signos de puntuación no deben ser tenidos en cuenta.  
-Mira a ver si te sirve la función [explode](https://www.w3schools.com/php/func_string_explode.asp).
+Mira a ver si te sirve la función [explode](https://www.w3schools.com/php/func_string_explode.asp) del API. También hay varias funciones en el API para ordenar arrays.
+
 
