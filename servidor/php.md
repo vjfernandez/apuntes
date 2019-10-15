@@ -63,5 +63,6 @@ Usaremos una función de cálculo con un parámetro por defecto `eratostenes($n 
 
 **7** Haz un programa que pida una cadena y que imprima la cantidad de cada vocal que tiene, y cuente el número de veces que aparece cada palabra, imprimiendo las palabras en orden, y su frecuencia de aparición, en una tabla.
 Usa una función de cálculo `function cuentaPalabras($mensaje)` que devuelva un array asociativo con las palabras como claves, y su frecuencia como valor.
-Las palabras van separadas por 1 o más espacios. Los signos de puntuación no deben ser tenidos en cuenta.
+Las palabras van separadas por 1 o más espacios. Los signos de puntuación no deben ser tenidos en cuenta.  
+Mira a ver si te sirve la función [explode](https://www.w3schools.com/php/func_string_explode.asp).
 
