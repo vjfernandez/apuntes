@@ -56,7 +56,7 @@ Si la cadena no contiene una determinada vocal, estará también como clave del 
 Usa una función de cálculo `function esPrimo($n)`
 
 **5** haz un programa que imprima las tablas de multiplicar de los números 1 a 10... es decir, 10 tablas.  
-Haremos una función de _presentación_ que genere la tabla de un número. Con un bucle for llamaremos varias veces a esa función. `function dibujarTabla()`
+Haremos una función de _presentación_ que genere la tabla de un número. Con un bucle for llamaremos varias veces a esa función. `function dibujarTabla($num)`
 
 **6** Haz un programa que imprima **todos** los números entre 2 y un entero n dado por parámetro (Nombre del parámetro: `n`). Si no se da el parámetro se supondrá que n es 100, de tal manera que los primos se pinten en verde y los compuestos en rojo. 8 números en cada línea: una tabla de 8 datos por fila mejor
 (ojo a la última fila).  
