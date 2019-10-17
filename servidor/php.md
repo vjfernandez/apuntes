@@ -46,7 +46,8 @@ puede ser 'mascotas' o 'ropa'.
 
 **1** Haz un programa con una función que calcule el factorial de un número n, y muestre el resultado. (función de cáculo) `function factorial($n)`
 
-**2** Haz un programa que pida una cadena y sustituya cualquier vocal por "i", con la misma capitalización. Usa una función de cálculo `function cambiarVocales($mensaje)` Ej: "El mensaje secreto." --> "Il minsiji sicriti." [[Posible solución]](https://repl.it/@vjfernandez/ej-b-02)
+**2** Haz un programa que pida una cadena y sustituya cualquier vocal por "i", con la misma capitalización. Usa una función de cálculo `function cambiarVocales($mensaje)` Ej: "El mensaje secreto." --> "Il minsiji sicriti."  
+[[Posible solución]](https://repl.it/@vjfernandez/php-b-02)
 
 **3** Haz un programa que pida una cadena y que imprima la cantidad de cada vocal que tiene. Contempla sólo a, e, i, o, u, A, E, I, O, U. 
 Hacemos una función de cálculo, que acepte una cadena y devuelva un array asociativo, con las vocales en minúscula como claves y su frecuencia como valor.
@@ -62,11 +63,15 @@ Haremos una función de _presentación_ que genere la tabla de un número. Con u
 (ojo a la última fila).  
 
 Utilizando el algoritmo de [la criba de eratóstenes](https://es.wikipedia.org/wiki/Criba_de_Erat%C3%B3stenes) devolveremos un array con índices numéricos entre 2 y n, cuyos valores serán `true` si el número es primo o `false` si no lo es.  
-Usaremos una función de cálculo con un parámetro que indiqe el número maximoa comprobar (incluído) `eratostenes($n)`
+Usaremos una función de cálculo con un parámetro que indique el número maximo a comprobar (incluído) `eratostenes($n)`
+
+[[Posible solución]](https://repl.it/@vjfernandez/php-b-06)
 
 **7** Haz un programa que pida un texto, si quieres de varias líneas y que imprima la frecuencia de aparición de cada palabra que tiene, imprimiendo las palabras en orden alfabético, y su frecuencia de aparición, en una tabla.
 Usa una función de cálculo `function cuentaPalabras($mensaje)` que devuelva un array asociativo con las palabras como claves, y su frecuencia como valor.
 Las palabras van separadas por 1 o más espacios. Los signos de puntuación no deben ser tenidos en cuenta.  
 Mira a ver si te sirve la función [explode](https://www.w3schools.com/php/func_string_explode.asp) del API. También hay varias funciones en el API para ordenar arrays.
 
+[[Posible solución]](https://repl.it/@vjfernandez/php-b-07)
 
+<span style="color:red">**8: Tres en raya**. Entregable. </span> T
