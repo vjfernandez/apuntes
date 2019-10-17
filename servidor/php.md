@@ -74,4 +74,72 @@ Mira a ver si te sirve la función [explode](https://www.w3schools.com/php/func_
 
 [[Posible solución]](https://repl.it/@vjfernandez/php-b-07)
 
-<span style="color:red">**8: Tres en raya**. Entregable. </span> T
+<span style="color:red">**8**: Tres en raya. Entregable. </span> Vamos a programar un juego de **tres en raya** desarrollado completamente en el servidor, y manteniendo el estado mediante parámetros. El estado permanecerá todo el rato en el cliente, mediante parámetros que el cliente inyectará en las URL.
+
+El comportamiento esperado es el del [tic-tac-toe](https://www.google.com/search?q=tic+tac+toe) tradicional.
+
+El desarrollo se realiza en un solo script de php (recomendado `index.php`), que puede requerir otro con funciones.
+
+Parámetros:
+* `tablero`: una cadena de 9 caracteres exactamente, que representa a las casillas del tablero, recorrido de izquierda a derecha y de arriba a abajo en el que `x` representa una ficha del jugador, `o` a una del jugador y un guión `-` representa una casilla libre.
+
+```
+Ej:
+╔═══╦═══╦═══╗
+║ X ║ O ║   ║
+╠═══╬═══╬═══╣
+║   ║ X ║   ║      ===>   tablero=xo--x---o
+╠═══╬═══╬═══╣
+║   ║   ║ O ║
+╚═══╩═══╩═══╝
+```
+
+* `jugada`: Dos cifras decimales que indican las coordenadas (_fila, columna_) donde el usuario desea jugar su `x`. Ej: `jugada=02` indica que el usuario desea jugar en la casilla de la fila 0, columna 2.
+
+El juego inicia al llamar al index.php sin parámetros, pintando un tablero vacío, en el que las 9 casillas son clicables, y llevarán de nuevo a index.php, pero con los parámetros tablero y jugada incializados, que representan el estado del juego, pero guardado en el cliente. Recomiendo usar imágenes para representar las jugadas, arregladas en una tabla, o sin tabla... al ser elementos de línea se alinearán una al lado de la la otra, o en cajas separadas.
+
+Cuando index.php recibe una invocación con parámetros, deberá realizar la jugada del jugador, comprobar si lleva a empate o a ganar, y si no es así, decidir una jugada para el ordenador, ver si lleva a empate, o ganar, y generar una _response_ con el tablero actualizado.
+En todo momento se mostrará un enlace para reiniciar la partida: basta con que dirija a index.php sin parámetros.
+
+Se recomienda utilizar las siguientes funciones, como acordamos en clase:
+
+* De lógica:
+   * `parsearTablero($paramTablero)` → Recibe el parámetro que representa al tablero (la cadena de 9 caracteres) y devuelve un array de 3x3. Ej: `parsearTablero("xo--x---o")` devuelve `[["x","o", "-"], ["-", "x", "-"], ["-", "-", "o"]]`  
+Puedes usar `null` en lugar de "-". En ese caso, isset devuelve false cuando se le pasa un valor null, igual que si el dato no tuviese valor. También es posible comparar con la constante null, aunque recomiendo isset. Ej: `if ($a[0][2] == null) `.
+   * `anotarJugadaJugador($tablero, $fila, $col)` → Recibe el array tablero y la fila y la columna donde anotar la jugada. Devuelve un nuevo array con la jugada del jugador ya anotada.
+   * `decidirJugadaOrdenador($tablero)` → A partir del array del tabero, escoger una casilla en blanco para la jugada del ordenador: debería escoger una jugada que conduzca a un tres en raya para el ordenador y/o frustar cualquier intento de 3 en raya del jugador. Como debería devolver fila y columna, recomiendo que devuelva un array de dos enteros, indizado o asociativo, como mejor te venga.
+   * `obtenerEstadoPartida($tablero)` → Que indique cómo va la partida. Hay cuatro posibles estados: Ha ganado jugador, ha ganado ordenador, el tablero está lleno y hay empate, todavía quedan huecos y no ha ganado nadie.  
+Representa estos cuatro estados con cuatro valores enteros. Recomiendo usar [constantes](https://www.w3schools.com/php/php_constants.asp) enteras para representar estos cuatro valores
+
+* De presentación:
+   * `pintarTablero($tablero)` → Recibe el array tablero, y dibuja el tablero en html: las casillas libres deben ser clicables. Si quieres hacer algún efecto de [animación](https://www.w3schools.com/css/css3_animations.asp) sobre la jugada del ordenador para dar un efecto de _retardo_ amplía los parámetros con la jugada del ordenador.
+```css
+<html>
+<head>
+<style> 
+div#animado {
+  width: 100px;
+  height: 100px;
+  background-color: red;
+  animation-name: fadein;
+  animation-delay: 2s;
+  animation-duration: 4s;
+  opacity:0;
+}
+
+@keyframes fadein {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+</style>
+</head>
+<body>
+   <div id="animado">Hey</div>
+</body>
+</html>
+```
+
+Si se te ocurre que pueda venir bien alguna otra función... adelante.
+
+> Piensa en esto: Aunque pueda parecer que este programa no es gran cosa... este sistema que estamos explorando permite que una cantidad **ilimitada** de clientes jueguen una partida **simultánea** con el servidor.  
+> Al no gastar memoria en el servidor de manera permanente, ni principal con variables de sesión, ni secundaria con bases de datos, la cantidad de partidas que se pueden mantener en un momento dado es ilimitada, condicionada tan solo por la capacidad de respuesta del servidor y la red.
