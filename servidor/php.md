@@ -113,24 +113,27 @@ Representa estos cuatro estados con cuatro valores enteros. Recomiendo usar [con
 
 * De presentación:
    * `pintarTablero($tablero)` → Recibe el array tablero, y dibuja el tablero en html: las casillas libres deben ser clicables. Si quieres hacer algún efecto de [animación](https://www.w3schools.com/css/css3_animations.asp) sobre la jugada del ordenador para dar un efecto de _retardo_ amplía los parámetros con la jugada del ordenador.
+   
 ```css
 <html>
 <head>
 <style> 
-div#animado {
-  width: 100px;
-  height: 100px;
-  background-color: red;
-  animation-name: fadein;
-  animation-delay: 2s;
-  animation-duration: 4s;
-  opacity:0;
-}
-
+/* definimos una animación */
 @keyframes fadein {
   from {opacity: 0;}
   to {opacity: 1;}
 }
+
+div#animado {
+  width: 100px;
+  height: 100px;
+  background-color: red;
+  animation-name: fadein; /* aplicamos la animación a este div*/
+  animation-delay: 2s; /*  dos segundos de retraso antes de que empiece */
+  animation-duration: 4s; /* la animación durará 4s */
+  opacity:0; 
+}
+
 </style>
 </head>
 <body>
