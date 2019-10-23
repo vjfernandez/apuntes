@@ -146,3 +146,29 @@ Si se te ocurre que pueda venir bien alguna otra función... adelante.
 
 > Piensa en esto: Aunque pueda parecer que este programa no es gran cosa... este sistema que estamos explorando permite que una cantidad **ilimitada** de clientes jueguen una partida **simultánea** con el servidor.  
 > Al no gastar memoria en el servidor de manera permanente, ni principal con variables de sesión, ni secundaria con bases de datos, la cantidad de partidas que se pueden mantener en un momento dado es ilimitada, condicionada tan solo por la capacidad de respuesta del servidor y la red.
+
+##### C - Superglobales, formularios.
+
+**1** Haz un script llamado `datadump.php` y colócalo directamente en la carpeta pública de tu servidor de desarrollo, que saque en tablas el contenido de $_GET, $_POST y $_REQUEST
+
+**2** Haz un formulario que pida los siguientes datos, agrupados con fieldsets
+* Su nombre de persona (name: nombre)
+* Su email (name: email)
+* Su teléfono (name: tlf)
+* Si es hombre o mujer con un radio (name: genero, Values  "h" o "m") . 
+
+* Si le gusta la pizza y si le gusta el brocoli con checkboxes (nombre: pizza, brocoli) 
+* Un comentario de varias líneas (name: comentario)
+* Su género musical favorito en una lista desplegable (nombre: musica, valores: "tango", "la-rosalia", "kpop")
+* Sus colores favoritos, en una lista de opción multiple (nombre: color, valores: "azul", "rojo", "verde", "negro", "marengo"
+
+**3** Haz que el propio formulario del ejercicio 2 imprima los valores recibidos, pero vamos a filtrarlos
+1. con la función trim para quitar posibles espacios exteriores
+2. con stripslashes, que quitará las barras de escape de PHP
+3. con htmlspecialchars incluidas las comillas dobles, que convertirá carácteres especiales de html en entidades.
+
+**4** Comprobamos que el usuario ha introducido campos requeridos:
+Nombre y email.
+
+**5** Comprobamos que el teléfono solo tiene números espacios y opcionalmente el signo + al principio con una expresión regular (función `preg_match`)
+
