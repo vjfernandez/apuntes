@@ -167,8 +167,13 @@ Si se te ocurre que pueda venir bien alguna otra función... adelante.
 2. con stripslashes, que quitará las barras de escape de PHP
 3. con htmlspecialchars incluidas las comillas dobles, que convertirá carácteres especiales de html en entidades.
 
-**4** Comprobamos que el usuario ha introducido campos requeridos:
-Nombre y email.
+**4** Comprobamos requisitos adicionales:
+1. Nombre y email.
+2. Comprobamos que el teléfono solo tiene números espacios y opcionalmente el signo + al principio con una expresión regular (función `preg_match`)
 
-**5** Comprobamos que el teléfono solo tiene números espacios y opcionalmente el signo + al principio con una expresión regular (función `preg_match`)
+Si alguna de las condiciones no se diera, escribimos un mensaje aclaratorio. 
+Conservamos los datos en los controles.
+(Utilizamos la técnical del tutorial)
+
+
 
