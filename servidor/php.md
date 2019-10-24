@@ -162,7 +162,7 @@ Si se te ocurre que pueda venir bien alguna otra función... adelante.
 * Su género musical favorito en una lista desplegable (nombre: musica, valores: "tango", "la-rosalia", "kpop")
 * Sus colores favoritos, en una lista de opción multiple (nombre: color, valores: "azul", "rojo", "verde", "negro", "marengo"
 
-> Debemos aprender que los datos que vienen del cliente son **potencialmente inseguros**. Eso incluye <MARK>Todos los parámetros, la URL, y las COOKIES</MARK>.  
+> Debemos aprender que los datos que vienen del cliente son **potencialmente inseguros**. Eso incluye <MARK>Todos los parámetros, la URL, y las cookies</MARK>.  
 > Debemos tener siempre decididas unas condiciones para cada dato, y una acción si no se cumplen esas condiciones.
 
 **3** Haz que el propio formulario del ejercicio 2 imprima los valores recibidos, pero vamos a tomar decisiones acerca de la validez de los parámetros.
@@ -178,11 +178,10 @@ Si se te ocurre que pueda venir bien alguna otra función... adelante.
 Si alguna de las condiciones no se diera, escribimos un mensaje aclaratorio. 
 <mark>Conservamos los datos en los controles.</mark> (Utilizamos la técnical del tutorial)
 
-* **Generamos un mensaje de error brusco si el radio, o las listas devuelven un valor no válido**. Significa que nos han hackeado.
-
+* **Generamos un mensaje de error brusco si el radio, o las listas devuelven un valor no válido**. Significa que nos han hackeado. Vamos a usar, solo en esta ocasión y sin que sirva de precedente la función `exit`, también conocida como `die`, que interrumpe bruscamente el script cuando comprobemos esta situación.
 
 **4** Evitamos **inyecciones de código XSS**:
-* usamos y sanitizamos $_SERVER["PHP_SELF"]
-* Nos aseguramos de una inyección en los campos de texto no es posible.
+* usamos y sanitizamos `$_SERVER["PHP_SELF"]` 
+* Nos aseguramos de que una inyección en los campos de texto no es posible.
 
 
