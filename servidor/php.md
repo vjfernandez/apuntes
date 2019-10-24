@@ -162,18 +162,27 @@ Si se te ocurre que pueda venir bien alguna otra función... adelante.
 * Su género musical favorito en una lista desplegable (nombre: musica, valores: "tango", "la-rosalia", "kpop")
 * Sus colores favoritos, en una lista de opción multiple (nombre: color, valores: "azul", "rojo", "verde", "negro", "marengo"
 
-**3** Haz que el propio formulario del ejercicio 2 imprima los valores recibidos, pero vamos a filtrarlos
-1. con la función trim para quitar posibles espacios exteriores
-2. con stripslashes, que quitará las barras de escape de PHP
-3. con htmlspecialchars incluidas las comillas dobles, que convertirá carácteres especiales de html en entidades.
+> Debemos aprender que los datos que vienen del cliente son **potencialmente inseguros**. Eso incluye <MARK>Todos los parámetros, la URL, y las COOKIES</MARK>.  
+> Debemos tener siempre decididas unas condiciones para cada dato, y una acción si no se cumplen esas condiciones.
 
-**4** Comprobamos requisitos adicionales:
-1. Nombre y email.
-2. Comprobamos que el teléfono solo tiene números espacios y opcionalmente el signo + al principio con una expresión regular (función `preg_match`)
+**3** Haz que el propio formulario del ejercicio 2 imprima los valores recibidos, pero vamos a tomar decisiones acerca de la validez de los parámetros.
+
+* Vamos a decidir que **saneamos** los de texto libre.
+   1. con la función trim para quitar posibles espacios exteriores
+   2. con stripslashes, que quitará las barras de escape de PHP
+   3. con htmlspecialchars incluidas las comillas dobles, que convertirá carácteres especiales de html en entidades.
+* Vamos a decidir que **rechazamos**:
+   * nombre o email vacíos
+   * teléfonos que no tengan solo tiene números espacios y opcionalmente el signo + al principio con una expresión regular (función `preg_match`)
 
 Si alguna de las condiciones no se diera, escribimos un mensaje aclaratorio. 
-Conservamos los datos en los controles.
-(Utilizamos la técnical del tutorial)
+<mark>Conservamos los datos en los controles.</mark> (Utilizamos la técnical del tutorial)
 
+* **Generamos un mensaje de error brusco si el radio, o las listas devuelven un valor no válido**. Significa que nos han hackeado.
+
+
+**4** Evitamos **inyecciones de código XSS**:
+* usamos y sanitizamos $_SERVER["PHP_SELF"]
+* Nos aseguramos de una inyección en los campos de texto no es posible.
 
 
