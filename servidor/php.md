@@ -184,4 +184,26 @@ Si alguna de las condiciones no se diera, escribimos un mensaje aclaratorio.
 * usamos y sanitizamos `$_SERVER["PHP_SELF"]` 
 * Nos aseguramos de que una inyección en los campos de texto no es posible.
 
+**5** Inyecciones XSS en textareas
+En muchas aplicaciones web se permite la inclusión de **texto enriquecido**, habitualmente html con plugins como _nicedit_, que ya conocemos.
+
+Si es así, no podemos hacer un filtrado de htmlspecialchars, ya que las etiquetas de html no tienen efecto.
+Prueba a escribir algo de html en el campo de comentario e imprime ese campo en un div cuando todo el formulario esté correcto.
+Si escribes código inofensivo como ésto: `Hola <strong>mundo</strong><br><mark>Escribir html es una hermosa experiencia</mark>` no pasará nada, pero prueba con éste: `<script>alert("hacked!");</script>`.  
+
+*Moraleja*: Si se permite texto enriquecido con html, hay que escoger un conjunto de elementos permitidos y filtrar todos los demás, habitualmente con expresiones regulares, por ejemplo con la función [preg_replace](https://www.php.net/manual/es/function.preg-replace.php)  
+Este proceso es bastante costoso. Ese es uno de tantos motivos por los que los grandes sitios web, como facebook, twitter, etc no permiten texto enriquecido con html.  
+Filtra `<script .... /script>`
+
+**6** Pasar parámetros calculados o constantes en un form. (el input hidden)
+
+Cuando manejamos formularios, y uno de los datos que hay que enviar al servidor no lo proporciona el usuario, sino que es calculado o fijo, puede convenir pasarlo junto con el resto de los datos del formulario, pero _no hay que pedírselo al usuario_.
+En ese caso, conviene utilizar el (input hidden)[https://developer.mozilla.org/es/docs/Web/HTML/Elemento/input/hidden].
+
+Vamos contar las veces que el formulario es mostrado al usuario hasta que los datos son correctos, y cuando finalmente los datos sean correctos, mostraremos ese valor junto con los demás. Ej: "Se ha presentado el formulario 3 veces".
+
+El input hidden suele usarse para:
+* pasar datos calculados
+* pasar datos constantes, como la PK del dato que está siendo editado en un formulario de modificación
+* pasar tokens de seguridad de criprografía cuando haya que identificarse frente a un script.
 
