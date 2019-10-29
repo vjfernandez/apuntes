@@ -198,7 +198,7 @@ Filtra `<script .... /script>`
 **6** Pasar parámetros calculados o constantes en un form. (el input hidden)
 
 Cuando manejamos formularios, y uno de los datos que hay que enviar al servidor no lo proporciona el usuario, sino que es calculado o fijo, puede convenir pasarlo junto con el resto de los datos del formulario, pero _no hay que pedírselo al usuario_.
-En ese caso, conviene utilizar el (input hidden)[https://developer.mozilla.org/es/docs/Web/HTML/Elemento/input/hidden].
+En ese caso, conviene utilizar el [input hidden](https://developer.mozilla.org/es/docs/Web/HTML/Elemento/input/hidden).
 
 Vamos contar las veces que el formulario es mostrado al usuario hasta que los datos son correctos, y cuando finalmente los datos sean correctos, mostraremos ese valor junto con los demás. Ej: "Se ha presentado el formulario 3 veces".
 
