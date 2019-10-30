@@ -8,7 +8,6 @@ Usaremos java, un lenguaje que ya conocemos para aprender los puntos fundamental
 >   espacio de memoria para almacenar datos asociados a la sesión del cliente
 > * Se tiene acceso a memoria secundaria para almacenar y recuperar datos, habitualmente mediante **sistemas gestores de bases de datos**
 
-
 ## Servlets
 
 Un servidor de aplicaciones web de Java proporciona el modelo de programación de **Servlets**,
@@ -134,12 +133,16 @@ En JSP, cualquier texto que no esté encerrado entre marcas especiales es enviad
 
 * `<%` ... `%>`: Un fragmento de código que será enviado al interior **del método principal del servlet**. Admite por lo tanto variables, que serán transpiladas como <mark>variables locales</mark>, y sentencias de código, que serán enviadas al interior del método.
 * `<%!` ... `%>`: Un fragmento de código que será enviado al interior **de la clase del servlet**. Admite por lo tanto variables, que serán transpiladas como <mark>variables de instancia</mark> o de clase si llevan el modificador static, y definiciones de métodos formarán parte de la clase del servlet, pero no sentencias sueltas.
+* `<%=`expresión`%>`: Entre estas marcas debe haber una _expresión_. La expresión se evalúa y el resultado se envia en la respuesta hacia el cliente. Es equivalente a un `out.print(`expresión`);`
 
 #### Directivas
+
 JSP tiene algunas directivas con significado especial. Por ejemplo.
+
 * `<%@page import="..."%>` Importa una clase o paquete 
 
 ### Objetos implícitos
+
 Existen varios objetos creados de manera automática en un jsp y que se pueden usar directamente. Entre ellos:
 
 * `request`: un objeto de tipo `HttpServletRequest` que representa a la petición que se ha recibido en el servidor de aplicaciones java. De este objeto podemos extraer _parámetros_, _cookies_ y otra información sobre la petición.
@@ -160,4 +163,4 @@ El manejo de sesión en JSP es automático: se envia una cookie automáticamente
 ### Acceso a datos.
 Todos los mecanismos de java están disponibles para acceder a datos con un JSP.
 
-Nosotros utilizaremos jdbc, con sentencias preparadas para evitar inyecciones de SQL.
+Nosotros utilizaremos [jdbc](https://docs.oracle.com/javase/tutorial/jdbc/index.html), con sentencias preparadas para evitar [inyecciones de SQL](https://es.wikipedia.org/wiki/Inyecci%C3%B3n_SQL).
