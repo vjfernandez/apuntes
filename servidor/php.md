@@ -13,7 +13,7 @@ Para aprender los fundamentos de _php_ estamos siguiendo el [tutorial de w3schoo
 
 #### Ejercicios / técnicas
 
-Vamos a ir elaborando los siguientes ejercicios para practicar las técnicas de programación en servidor que aprendemos en clase.
+> Vamos a ir elaborando los siguientes ejercicios para practicar las técnicas de programación en servidor que aprendemos en clase.
 Algunos ejercicios incluyen indicaciones de estas técnicas.
 
 ##### A - Introductorios
