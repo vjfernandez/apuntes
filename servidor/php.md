@@ -1,6 +1,15 @@
 # php
 
+Php es un lenguaje de scripts interpretado, imperativo y orientado a objetos, dirigido principalmente a la programación en servidor de aplicaciones web.
 
+Existen intérpretes para Windows, GNU/Linux y otros sistemas operativos.
+
+Se integra con un servidor de aplicaciones genérico, habitualmente _apache_ o _nginx_: cualquier petición que recibe el servidor de un fichero con extensión `.php` es pasada al intérprete de php, que ejecutará el script. El script tendrá acceso a la petición http y deberá generar la respuesta, que el servidor de aplicaciones devolverá al cliente.
+
+La última versión mayor es PHP7.
+
+## Tutorial de referencia
+Para aprender los fundamentos de _php_ estamos siguiendo el [tutorial de w3schools](https://www.w3schools.com/php/default.asp).
 
 #### Ejercicios
 
